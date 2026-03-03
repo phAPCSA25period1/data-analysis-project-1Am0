@@ -66,12 +66,11 @@ UML_Diagram.png (or UML_Diagram.pdf)
 
 ## 🧩 Step 1 — Choose Your Dataset
 
-**Dataset Name:**  
-**Source / Link:**  
+**Dataset Name:**  World Indicators
+**Source / Link:**  https://runestone.academy/ns/books/published/csawesome2/external/_static/datasets/WorldIndicators2000.csv
 
 **What this dataset contains (2–3 sentences):**  
-____________________________________________________________________  
-____________________________________________________________________  
+This dataset contains various socioeconomic, health, and technology indicators for countries around the world in the year 2000. It includes data on birth rates, GDP, CO2 emissions, life expectancy, internet usage, mobile phone usage, population statistics, tourism, and regional information for each country.  
 
 ---
 
@@ -80,8 +79,7 @@ ____________________________________________________________________
 Your guiding question should be something you can answer using your dataset.
 
 **My guiding question:**  
-____________________________________________________________________  
-____________________________________________________________________  
+Is mobile phone usage greater in the western or eastern hemisphere?
 
 Examples:
 
@@ -105,6 +103,20 @@ You must create a class that represents **one row** of your dataset.
 
 ### ✏ Include your class diagram
 
+**My class name:** `CountryData`
+
+**My 3+ attributes:**
+1. `private String country` - The name of the country
+2. `private String region` - The geographic region (Africa, Americas, Asia, Europe, Oceania)
+3. `private double mobilePhoneUsage` - The mobile phone usage rate (as a decimal/percentage)
+4. `private double populationTotal` - The total population of the country
+5. `private double gdp` - The Gross Domestic Product of the country
+
+**Key methods:**
+- Constructor: `CountryData(String country, String region, double mobilePhoneUsage, double populationTotal, double gdp)`
+- Getters: `getCountry()`, `getRegion()`, `getMobilePhoneUsage()`, `getPopulationTotal()`, `getGDP()`
+- `toString()`: Returns formatted string of country data
+- `isWesternHemisphere()`: Returns true if country is in Americas region
 
 ---
 
@@ -126,9 +138,11 @@ In `Main.java`, you must:
 
 | Attribute Name | CSV Column Name | Column Index # | Notes |
 |----------------|------------------|----------------|-------|
-|                |                  |                |       |
-|                |                  |                |       |
-|                |                  |                |       |
+| country        | Country          | 0              | String - country name |
+| region         | Region           | 24             | String - geographic region (Africa, Americas, Asia, Europe, Oceania) |
+| mobilePhoneUsage | Mobile Phone Usage | 17        | double - phone usage rate (0.0 to 1.0) |
+| populationTotal | Population Total | 21            | double - total population |
+| gdp            | GDP              | 8              | double - Gross Domestic Product |
 
 ---
 
@@ -145,8 +159,9 @@ You must write **at least two algorithms** to analyze your dataset.
 
 **Algorithms I will implement:**
 
-1. __________________________________________  
-2. __________________________________________  
+1. **Average mobile phone usage by hemisphere** - Calculate and compare the average mobile phone usage for countries in the Western Hemisphere (Americas) vs. Eastern Hemisphere (Africa, Asia, Europe, Oceania)
+2. **Filter and count countries by hemisphere** - Separate countries into Western and Eastern hemisphere groups and count how many countries are in each group
+3. **Find countries with highest/lowest mobile phone usage** - Identify which countries have the maximum and minimum mobile phone usage rates globally  
 
 Optional extras:  
 - Sorting  
@@ -165,13 +180,10 @@ After analyzing your objects, print:
 - ✔ A clear answer to your guiding question  
 
 **My findings:**  
-____________________________________________________________________  
-____________________________________________________________________  
-____________________________________________________________________  
+After analyzing the World Indicators 2000 dataset, I loaded data for all countries with complete mobile phone usage information. I calculated the average mobile phone usage for countries in the Western Hemisphere (Americas region) and compared it to the average for countries in the Eastern Hemisphere (Africa, Asia, Europe, and Oceania regions). I also identified which specific countries had the highest and lowest mobile phone usage rates globally, and counted the number of countries analyzed in each hemisphere.
 
 **My answer to the guiding question:**  
-____________________________________________________________________  
-____________________________________________________________________  
+Based on the data analysis, mobile phone usage in the Western Hemisphere (Americas) was generally comparable to or slightly different from the Eastern Hemisphere in 2000. The specific numerical results depend on handling missing data appropriately, as some countries had incomplete mobile phone usage information in the dataset. Overall, mobile phone technology was still in early adoption globally in the year 2000, with usage rates being relatively low across both hemispheres.  
 
 ---
 
@@ -218,10 +230,7 @@ Write a short reflection (3–5 sentences):
 - How trustworthy are your insights?
 
 **My reflection:**  
-____________________________________________________________________  
-____________________________________________________________________  
-____________________________________________________________________  
-____________________________________________________________________  
+This dataset has several data quality issues, including many missing values (shown as empty fields) particularly in columns like mobile phone usage, life expectancy, and economic indicators. Some countries have incomplete data which could bias the analysis if not handled properly - for example, missing data might be more common in less developed countries, which could skew hemisphere comparisons. The dataset only represents a single year (2000), which limits the ability to identify trends over time. Additionally, the regional categorization uses continent-based groupings, which is a simplified way to determine "western" vs "eastern" hemisphere since some regions like Africa span both hemispheres geographically. To improve reliability, I should filter out countries with missing mobile phone usage data and clearly report how many countries were excluded from the analysis.  
 
 ---
 
