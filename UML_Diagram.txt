@@ -1,0 +1,24 @@
+╔═══════════════════════════════════════════════════════════════╗
+║                         CountryData                           ║
+╠═══════════════════════════════════════════════════════════════╣
+║ - country : String                                            ║
+║ - region : String                                             ║
+║ - mobilePhoneUsage : double                                   ║
+║ - populationTotal : double                                    ║
+║ - gdp : double                                                ║
+╠═══════════════════════════════════════════════════════════════╣
+║ + CountryData(country: String, region: String,                ║
+║               mobilePhoneUsage: double,                       ║
+║               populationTotal: double, gdp: double)           ║
+║ + getCountry() : String                                       ║
+║ + getRegion() : String                                        ║
+║ + getMobilePhoneUsage() : double                              ║
+║ + getPopulationTotal() : double                               ║
+║ + getGDP() : double                                           ║
+║ + isWesternHemisphere() : boolean                             ║
+║ + toString() : String                                         ║
+╚═══════════════════════════════════════════════════════════════╝
+
+Legend:
+  - (minus)  = private
+  + (plus)   = public
